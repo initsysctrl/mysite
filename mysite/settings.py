@@ -29,16 +29,17 @@ ALLOWED_HOSTS = []
 
 
 # Application definition
-
+# 包含的应用模块设置
 INSTALLED_APPS = [
-    'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
+    'polls.apps.PollsConfig',
+    'django.contrib.admin',  # 管理员站点
+    'django.contrib.auth',  # 认证授权系统
+    'django.contrib.contenttypes',  # 内容类型框架
+    'django.contrib.sessions',  # 会话框架
+    'django.contrib.messages',  # 消息框架
+    'django.contrib.staticfiles',  # 静态文件管理框架
 ]
-
+# 中间件
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -48,7 +49,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
-
+# url根路径
 ROOT_URLCONF = 'mysite.urls'
 
 TEMPLATES = [
@@ -72,12 +73,20 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
-
+# 数据库设置
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.mysql',  # 数据库引擎
+    #     'NAME': 'django_mysql',  # 数据库名
+    #     'USER': 'root',  # 账号
+    #     'PASSWORD': 'password',  # 密码
+    #     'HOST': '127.0.0.1',  # HOST
+    #     'POST': 3306,  # 端口
+    # }
 }
 
 
@@ -100,12 +109,12 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
-# Internationalization
+# 国际化
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
 
 LANGUAGE_CODE = 'en-us'
-
-TIME_ZONE = 'UTC+8'
+# 时区，北京时间为 utc+8
+TIME_ZONE = 'Asia/Shanghai'
 
 USE_I18N = True
 
