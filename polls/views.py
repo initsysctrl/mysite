@@ -3,12 +3,13 @@ Date: 2021-03-23 10:20:15
 '''
 
 from django.core.serializers.json import Serializer
+from django.db.models.fields.json import JSONField
 from django.http.response import Http404
 from django.shortcuts import render
 
 # Create your views here.
 from django.http import HttpResponse, JsonResponse, HttpResponseRedirect
-from .models import Choice, Question
+from .models import Blog, Choice, Question
 from django.template import loader
 from django.shortcuts import render, get_object_or_404
 from django.core.serializers import serialize
@@ -79,3 +80,12 @@ def vote(request, question_id):
         # user hits the Back button.
         return HttpResponseRedirect(reverse('polls:results', args=(question.id,)))
     # 投票页
+
+
+def blog(request, page_id):
+    if request.method == 'GET':
+        try:
+            blog = Blog.objects.get(id=page_id)
+        except:
+            blog = {"author": "无", "title": "无", "content": "无"}
+        return JsonResponse(blog)

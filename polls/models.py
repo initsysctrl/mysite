@@ -30,3 +30,12 @@ class Choice(models.Model):
 # 字符字段-CharFiled
 # 日期类型-DataTimeFiled
 #
+
+
+class Blog(models.Model):
+    # 标题
+    title = models.CharField(max_length=20)
+    # 作者
+    author = models.CharField(max_length=20, default='匿名')
+    # 内容
+    content = models.TextField()

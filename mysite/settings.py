@@ -31,7 +31,8 @@ ALLOWED_HOSTS = []
 # Application definition
 # 包含的应用模块设置
 INSTALLED_APPS = [
-    'polls.apps.PollsConfig',
+    'polls',
+    # 'polls.apps.PollsConfig',
     'django.contrib.admin',  # 管理员站点
     'django.contrib.auth',  # 认证授权系统
     'django.contrib.contenttypes',  # 内容类型框架
@@ -81,7 +82,7 @@ DATABASES = {
     }
     # 'default': {
     #     'ENGINE': 'django.db.backends.mysql',  # 数据库引擎
-    #     'NAME': 'django_mysql',  # 数据库名
+    #     'NAME': 'test',  # 数据库名
     #     'USER': 'root',  # 账号
     #     'PASSWORD': 'password',  # 密码
     #     'HOST': '127.0.0.1',  # HOST
