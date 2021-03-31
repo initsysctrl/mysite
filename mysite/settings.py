@@ -32,7 +32,7 @@ ALLOWED_HOSTS = []
 # 包含的应用模块设置
 INSTALLED_APPS = [
     'polls',
-    # 'polls.apps.PollsConfig',
+    'blog',
     'django.contrib.admin',  # 管理员站点
     'django.contrib.auth',  # 认证授权系统
     'django.contrib.contenttypes',  # 内容类型框架
