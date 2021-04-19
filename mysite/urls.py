@@ -20,6 +20,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.urls.conf import include
+from django.conf.urls import static
+from django.conf import settings
 urlpatterns = [
     path('polls/', include('polls.urls')),
     path('blog/', include('blog.urls')),

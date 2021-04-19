@@ -1,0 +1,16 @@
+{% load static %}
+<html>
+<head>
+<title>Django的美妙爵士乐</title>
+</head>
+<body>
+ 
+<h1>{{blog.title}}</h1>
+<div>
+<span><strong>作者:</strong>{{blog.author}}</span> <span><strong>分类:</strong>{{blog.category}}</span>
+</div>
+<p>{{blog.content}}</p>
+<p><strong>博客修改时间:</strong>{{blog.modify_time}}</p>
+<img src="{{blog.illustration.url}}">
+</body>
+</html>
